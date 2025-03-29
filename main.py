@@ -1,7 +1,15 @@
+import sys
+
 from stats import get_num_words, get_book_text, get_char_count, print_report
+
 def main():
-    book_to_analyze = 'frankenstein'
-    file_path = f'./books/{book_to_analyze}.txt'
+
+    if len(sys.argv) <= 1:
+        print('Usage: python3 main.py <path_to_book>')
+        sys.exit(1)
+
+   
+    file_path = f'./{sys.argv[1]}'
     # print(get_book_text(file_path))
 
     full_text = get_book_text(file_path)
